@@ -1,75 +1,84 @@
-import {
-  View,
-  Text,
-  StyleSheet,
-  Image,
-  SafeAreaView,
-  useWindowDimensions,
-  ScrollView,
-} from "react-native";
 import React, { useState } from "react";
+import { View, Text, StyleSheet, SafeAreaView, ScrollView } from "react-native";
 import Input from "../custom/Input";
 import Button from "../custom/Button";
+import { signInWithEmailAndPassword } from "firebase/auth";
+import { firebaseAuth } from "../../FirebaseConfig";
 import { useNavigation } from "@react-navigation/native";
+
 export default function Login() {
-  const { height } = useWindowDimensions();
-  const [email, onChangeEmail] = useState("");
-  const [password, onChangePassword] = useState("");
-  const [passwordCheck, setPasswordCheck] = useState(true); // to check on password
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
   const [showError, setShowError] = useState(false);
-  const [errorMessage, setErrorMessage] = useState("Error msg");
-  const [formSubmitted, setFormSubmitted] = useState(false);
-  const [emailValid, setEmailValid] = useState(true);
-const navigation = useNavigation()
-  const signIn = ()=>{
-   navigation.navigate('Home')
-  }
-  const signup = ()=>{
-    navigation.navigate('Signup')
-  }
-  const signIngoogle = ()=>{
-    navigation.navigate('')
-  }
-  
+  const [errorMessage, setErrorMessage] = useState("");
+  const navigation = useNavigation();
+
+  const signInUser = async () => {
+    try {
+      await signInWithEmailAndPassword(firebaseAuth, email, password);
+
+      navigation.navigate("Home");
+    } catch (error) {
+      console.error("Error signing in:", error.message);
+
+      setShowError(true);
+      setErrorMessage(error.message);
+    }
+  };
+
+  const signUp = () => {
+    navigation.navigate("Signup");
+  };
+
+  const signInWithGoogle = () => {};
+
   return (
     <SafeAreaView>
       <ScrollView showsVerticalScrollIndicator={false}>
-        <View
-          style={{
-            alignItems: "center",
-            padding: 20,
-            marginTop: 70,
-          }}
-        >
-           
-          <Text style={style.Heading}>Login In</Text>
-
-          <Input placeholder="E-mail" value={email} setValue={onChangeEmail} />
+        <View style={styles.container}>
+          <Text style={styles.heading}>Login In</Text>
+          <Input
+            placeholder="E-mail"
+            value={email}
+            setValue={setEmail}
+          />
           <Input
             placeholder="Password"
             value={password}
-            setValue={onChangePassword}
+            setValue={setPassword}
             secureTextEntry={true}
           />
-
-          <Button text="Sign In"  onPress={signIn}/>
+          {showError && <Text style={styles.error}>{errorMessage}</Text>}
+          <Button text="Sign In" onPress={signInUser} />
           <Button
             text="Sign In with Google"
             bgcolor="#FAE9EA"
             fgcolor="#DD4D44"
-            onPress={signIngoogle}
+            onPress={signInWithGoogle}
           />
-
-          <Button text="don't have an account? Create one" onPress={signup} type="TERITIARY" />
+          <Button
+            text="Don't have an account? Create one"
+            onPress={signUp}
+            type="TERITIARY"
+          />
         </View>
       </ScrollView>
     </SafeAreaView>
   );
 }
 
-const style = StyleSheet.create({
-  Heading: {
+const styles = StyleSheet.create({
+  container: {
+    alignItems: "center",
+    padding: 20,
+    marginTop: 70,
+  },
+  heading: {
     color: "black",
     fontSize: 34,
+  },
+  error: {
+    color: "red",
+    marginBottom: 10,
   },
 });
