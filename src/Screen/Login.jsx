@@ -10,6 +10,7 @@ import {
 import React, { useState } from "react";
 import Input from "../custom/Input";
 import Button from "../custom/Button";
+import { useNavigation } from "@react-navigation/native";
 export default function Login() {
   const { height } = useWindowDimensions();
   const [email, onChangeEmail] = useState("");
@@ -19,15 +20,15 @@ export default function Login() {
   const [errorMessage, setErrorMessage] = useState("Error msg");
   const [formSubmitted, setFormSubmitted] = useState(false);
   const [emailValid, setEmailValid] = useState(true);
-
+const navigation = useNavigation()
   const signIn = ()=>{
-    console.warn('Sign in');
+   navigation.navigate('Home')
   }
   const signup = ()=>{
-    console.warn('Sign in');
+    navigation.navigate('Signup')
   }
   const signIngoogle = ()=>{
-    console.warn('Sign in with  google');
+    navigation.navigate('')
   }
   
   return (

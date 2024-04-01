@@ -5,29 +5,22 @@ import * as SplashScreen from 'expo-splash-screen';
 import { useCallback } from 'react';
 import Login from './src/Screen/Login';
 import Signup from './src/Screen/Signup';
-SplashScreen.preventAutoHideAsync();
+import { NavigationContainer } from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import Home from './src/Screen/Home';
+
 export default function App() {
-  const [fontsLoaded, fontError] = useFonts({
-    'outfit': require('./assets/fonts/Outfit-Regular.ttf'),
-    'outfit-bold': require('./assets/fonts/Outfit-Light.ttf'),
-    'outfit-Black': require('./assets/fonts/Outfit-Black.ttf'),
-  });
 
-  const onLayoutRootView = useCallback(async () => {
-    if (fontsLoaded || fontError) {
-      await SplashScreen.hideAsync();
-    }
-  }, [fontsLoaded, fontError]);
+  const Stack = createNativeStackNavigator();
 
-  if (!fontsLoaded && !fontError) {
-    return null;
-  }
   return (
-    <View style={styles.container}  onLayout={onLayoutRootView}>
-    {/* <Login /> */}
-    <Signup />
-      <StatusBar style="auto" />
-    </View>
+    <NavigationContainer>
+    <Stack.Navigator>
+      <Stack.Screen options={{ headerShown: false }} name="Login" component={Login} />
+      <Stack.Screen name="Home" component={Home} />
+      <Stack.Screen  options={{ headerShown: false }} name="Signup" component={Signup} />
+    </Stack.Navigator>
+  </NavigationContainer>
   );
 }
 
@@ -35,6 +28,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: '#fff',
- paddingTop:25
+    alignItems: 'center',
+    justifyContent: 'center',
   },
 });
