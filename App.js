@@ -19,9 +19,9 @@ export default function App() {
       <Stack.Navigator initialRouteName='Login'>
     
         <Stack.Screen options={{ headerShown: false }} name="Login" component={Login} />
-        <Stack.Screen  name="Home" component={TabNavigation} />
+        <Stack.Screen  options={{ headerBackTitleVisible: false ,headerTitle: '',}} name="Home" component={TabNavigation} />
         <Stack.Screen options={{ headerShown: false }} name="Signup" component={Signup} />
-        <Stack.Screen  name="Logout" component={Logout} />
+        <Stack.Screen   name="Logout" component={Logout} />
        
 
         
