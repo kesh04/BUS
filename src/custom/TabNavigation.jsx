@@ -6,7 +6,7 @@ import Profile from "../page/Profile";
 import { Entypo } from '@expo/vector-icons';
 import { Feather } from '@expo/vector-icons';
 import Search from "../page/Search";
-
+import { FontAwesome5 } from '@expo/vector-icons';
 
 const Tab = createBottomTabNavigator();
 const TabNavigation = () => {
@@ -32,7 +32,7 @@ const TabNavigation = () => {
        options={{
         tabBarLabel:"Setting",
         tabBarIcon:({color,size})=>(
-          <Feather name="settings" size={24} color="#1c4b3d" />
+          <FontAwesome5 name="user-circle" size={24} color="#1c4b3d"  />
         )
 
     }} />
