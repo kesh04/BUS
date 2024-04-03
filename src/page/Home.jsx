@@ -6,7 +6,7 @@ import TabNavigation from '../custom/TabNavigation'
 export default function Home() {
   return (
     <View>
-      <Text>keshan</Text>
+      <Text>keshana   </Text>
 
      
             
