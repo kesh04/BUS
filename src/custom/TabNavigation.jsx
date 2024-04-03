@@ -15,6 +15,7 @@ const TabNavigation = () => {
       <Tab.Screen name="Home" component={Home}
       options={{
         tabBarLabel:"Home",
+        headerShown:false,
         tabBarIcon:({color,size})=>(
           <Entypo name="home" size={24} color="#1c4b3d" />
         )
