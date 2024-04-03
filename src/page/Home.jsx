@@ -7,6 +7,7 @@ export default function Home() {
   return (
     <View>
       <Text>keshan</Text>
+      <Text> Supun </Text>
 
      
             
