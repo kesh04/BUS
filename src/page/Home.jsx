@@ -1,9 +1,19 @@
-import { View, Text, StyleSheet } from "react-native";
+import {
+  View,
+  Text,
+  StyleSheet,
+  StatusBar,
+  Image,
+  ScrollView,
+  ImageBackground,
+  Pressable,
+} from "react-native";
 import React, { useLayoutEffect } from "react";
 import { useNavigation } from "@react-navigation/native";
-import TabNavigation from "../custom/TabNavigation";
+
 import { SafeAreaView } from "react-native-safe-area-context";
 import { getStatusBarHeight } from "react-native-status-bar-height";
+import { Button } from "react-native";
 export default function Home() {
   const navigation = useNavigation();
   // useLayoutEffect(()=>{
@@ -16,11 +26,38 @@ export default function Home() {
   //     }
   //   })
   // },[])
+  const search = () => {
+    navigation.navigate("Search");
+  };
 
   return (
-    <SafeAreaView>
-      <View style={styles.container}>
-        <Text>keshan</Text>
+    <SafeAreaView style={styles.container}>
+      <View>
+        <View style={styles.header}>
+          <Text
+            style={{
+              fontSize: 25,
+
+              color: "#097969",
+              fontWeight: 800,
+              padding: 10,
+            }}
+          >
+            MOVELK
+          </Text>
+          <Text style={styles.text1}>select your loaction </Text>
+          <Pressable style={styles.button} onPress={search}>
+            <Text style={styles.text}>Search Ride</Text>
+          </Pressable>
+        </View>
+        <ScrollView bounces={false}>
+          <View style={styles.home}>
+            <Image
+              source={require("../../assets/images/bus.png")}
+              style={styles.img1}
+            />
+          </View>
+        </ScrollView>
       </View>
     </SafeAreaView>
   );
@@ -28,14 +65,36 @@ export default function Home() {
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
-    backgroundColor: "white",
-    paddingBottom: 30,
-    paddingTop: getStatusBarHeight(),
+    height: "100%",
   },
   header: {
-    backgroundColor: "#286ef0",
-    height: 70,
-    alignItems: "flex-start",
+    height: "auto",
+    borderRadius: 10,
+  },
+
+  text1: {
+    color: "black",
+    fontSize: 22,
+    paddingBottom: 30,
+    padding: 10,
+    marginVertical: -5,
+  },
+  img1: {
+    width: "100%",
+    height: 170,
+  },
+  button: {
+    alignItems: "center",
+    justifyContent: "center",
+    borderRadius: 40,
+    marginTop: -10,
+    marginLeft: 8,
+    backgroundColor: "#097969",
+    width: "35%",
+    height: "25%",
+  },
+  text: {
+    fontSize: 20,
+    color: "white",
   },
 });
