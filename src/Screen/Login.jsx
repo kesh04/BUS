@@ -5,7 +5,7 @@ import Button from "../custom/Button";
 import { signInWithEmailAndPassword } from "firebase/auth";
 import { firebaseAuth } from "../../FirebaseConfig";
 import { useNavigation } from "@react-navigation/native";
-import { Path, Svg } from "react-native-svg";
+
 
 export default function Login() {
   const [email, setEmail] = useState("");
@@ -37,9 +37,7 @@ export default function Login() {
     <SafeAreaView>
       <ScrollView showsVerticalScrollIndicator={false}>
         <View style={styles.container}>
-          <Svg>
-            <Path d="M0,64L40,64C80,64,160,64,240,74.7C320,85,400,107,480,144C560,181,640,235,720,229.3C800,224,880,160,960,117.3C1040,75,1120,53,1200,74.7C1280,96,1360,160,1400,192L1440,224L1440,0L1400,0C1360,0,1280,0,1200,0C1120,0,1040,0,960,0C880,0,800,0,720,0C640,0,560,0,480,0C400,0,320,0,240,0C160,0,80,0,40,0L0,0Z"/>
-          </Svg>
+         
           <Text style={styles.heading}>Login In</Text>
           <Input
             placeholder="E-mail"
