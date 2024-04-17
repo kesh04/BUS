@@ -1,17 +1,100 @@
-import { View, Text } from 'react-native'
-import React from 'react'
-import { NavigationContainer } from '@react-navigation/native'
-import TabNavigation from '../custom/TabNavigation'
+import {
+  View,
+  Text,
+  StyleSheet,
+  StatusBar,
+  Image,
+  ScrollView,
+  ImageBackground,
+  Pressable,
+} from "react-native";
+import React, { useLayoutEffect } from "react";
+import { useNavigation } from "@react-navigation/native";
 
+import { SafeAreaView } from "react-native-safe-area-context";
+import { getStatusBarHeight } from "react-native-status-bar-height";
+import { Button } from "react-native";
 export default function Home() {
-  return (
-    <View>
-      <Text>keshan</Text>
-      <Text> Supun </Text>
+  const navigation = useNavigation();
+  // useLayoutEffect(()=>{
+  //   navigation.setOptions({
+  //     headerShown: true,
+  //     title:'',
+  //     headerStyle:{
+  //       backgroundColor:'red',
+  //       height:100
+  //     }
+  //   })
+  // },[])
+  const search = () => {
+    navigation.navigate("Search");
+  };
 
-     
-            
-      
-    </View>
-  )
+  return (
+    <SafeAreaView style={styles.container}>
+      <View>
+        <View style={styles.header}>
+          <Text
+            style={{
+              fontSize: 25,
+
+              color: "#097969",
+              fontWeight: 800,
+              padding: 10,
+            }}
+          >
+            MOVELK
+          </Text>
+          <Text style={styles.text1}>select your loaction </Text>
+          <Pressable style={styles.button} onPress={search}>
+            <Text style={styles.text}>Search Ride</Text>
+          </Pressable>
+        </View>
+        <ScrollView bounces={false}>
+          <View style={styles.home}>
+            <Image
+              source={require("../../assets/images/bus.png")}
+              style={styles.img1}
+            />
+          </View>
+        </ScrollView>
+      </View>
+    </SafeAreaView>
+  );
 }
+
+const styles = StyleSheet.create({
+  container: {
+    height: "100%",
+  },
+  header: {
+    height: "auto",
+    borderRadius: 10,
+  },
+
+  text1: {
+    color: "black",
+    fontSize: 22,
+    paddingBottom: 30,
+    padding: 10,
+    marginVertical: -5,
+  },
+  img1: {
+    width: "100%",
+    height: 170,
+  },
+  button: {
+    alignItems: "center",
+    justifyContent: "center",
+    borderRadius: 40,
+    marginTop: -10,
+    marginLeft: 8,
+    backgroundColor: "#097969",
+    width: "35%",
+    height: "25%",
+  },
+  text: {
+    fontSize: 20,
+    color: "white",
+  },
+});
