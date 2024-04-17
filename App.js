@@ -8,6 +8,7 @@ import Signup from './src/Screen/Signup';
 import TabNavigation from './src/custom/TabNavigation';
 
 import Logout from './src/page/Logout';
+import Map from './src/map/Map';
 
 
 export default function App() {
@@ -22,6 +23,7 @@ export default function App() {
         <Stack.Screen  options={{ headerShown: false}} name="Home" component={TabNavigation} />
         {/* <Stack.Screen options={{ headerShown: false }} name="Signup" component={Signup} /> */}
         <Stack.Screen   name="Logout" component={Logout} />
+        <Stack.Screen   name="Map" component={Map} />
        
 
         
