@@ -31,15 +31,20 @@ export default function Home() {
   };
 
   return (
-    <SafeAreaView style={styles.container}>
-      <View>
+    <SafeAreaView >
+      <View style={styles.container}>
+
+          <Image style={{height:60,width:90, backgroundColor:'black', borderRadius:10, margin:5}} source={require("../../assets/images/icon.png")} />
+          
         <View style={styles.header}>
+      
+         
           <Text
             style={{
               fontSize: 25,
-
               color: "#097969",
-              fontWeight: 800,
+             paddingTop:-20,
+             fontWeight:800,
               padding: 10,
             }}
           >
@@ -48,7 +53,7 @@ export default function Home() {
           <Text style={styles.text1}>select your loaction </Text>
           <Pressable style={styles.button} onPress={search}>
             <Text style={styles.text}>Search Location</Text>
-            <AntDesign style={{marginLeft:8,color:'white'}} name="right" size={16}  />
+            <AntDesign style={{marginLeft:3,color:'white'}} name="right" size={15}  />
           </Pressable>
         </View>
         <ScrollView bounces={false}>
@@ -69,8 +74,9 @@ const styles = StyleSheet.create({
     height: "100%",
   },
   header: {
-    height: "auto",
+    height: "35%",
     borderRadius: 10,
+   
   },
 
   text1: {
@@ -91,8 +97,8 @@ const styles = StyleSheet.create({
     marginTop: -10,
     marginLeft: 5,
     backgroundColor: "#097969",
-    width: "30%",
-    height: "20%",
+    width: "40%",
+    height: "15%",
     flexDirection: 'row', 
   
     
