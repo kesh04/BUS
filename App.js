@@ -23,7 +23,7 @@ export default function App() {
         <Stack.Screen  options={{ headerShown: false}} name="Home" component={TabNavigation} />
         {/* <Stack.Screen options={{ headerShown: false }} name="Signup" component={Signup} /> */}
         <Stack.Screen   name="Logout" component={Logout} />
-        <Stack.Screen   name="Map" component={Map} />
+        <Stack.Screen   name="Map" component={Map} options={{ headerTitle: ''}} />
        
 
         

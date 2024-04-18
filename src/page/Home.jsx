@@ -13,7 +13,8 @@ import { useNavigation } from "@react-navigation/native";
 import { AntDesign } from "@expo/vector-icons";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { getStatusBarHeight } from "react-native-status-bar-height";
-import { Button } from "react-native";
+
+
 export default function Home() {
   const navigation = useNavigation();
   // useLayoutEffect(()=>{
@@ -34,11 +35,11 @@ export default function Home() {
     <SafeAreaView >
       <View style={styles.container}>
 
-          <Image style={{height:60,width:90, backgroundColor:'black', borderRadius:10, margin:5}} source={require("../../assets/images/icon.png")} />
+        
           
         <View style={styles.header}>
       
-         
+        <Image style={{height:60,width:90, backgroundColor:'black', borderRadius:10, margin:5}} source={require("../../assets/images/icon.png")} />
           <Text
             style={{
               fontSize: 25,
@@ -76,7 +77,7 @@ const styles = StyleSheet.create({
   header: {
     height: "35%",
     borderRadius: 10,
-   
+   backgroundColor:'red'
   },
 
   text1: {
