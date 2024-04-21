@@ -58,6 +58,7 @@ export default function Login() {
             fgcolor="#DD4D44"
             onPress={signInWithGoogle}
           />
+   
           <Button
             text="Don't have an account? Create one"
             onPress={signUp}

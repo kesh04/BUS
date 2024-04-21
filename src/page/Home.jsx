@@ -63,6 +63,7 @@ export default function Home() {
               source={require("../../assets/images/bus.png")}
               style={styles.img1}
             />
+            
           </View>
         </ScrollView>
       </View>
@@ -77,9 +78,8 @@ const styles = StyleSheet.create({
   header: {
     height: "35%",
     borderRadius: 10,
-   backgroundColor:'red'
+    
   },
-
   text1: {
     color: "black",
     fontSize: 22,
@@ -98,13 +98,9 @@ const styles = StyleSheet.create({
     marginTop: -10,
     marginLeft: 5,
     backgroundColor: "#097969",
-    width: "40%",
-    height: "15%",
+    width: "35%",
+    height: "20%",
     flexDirection: 'row', 
-  
-    
-  
-   
   },
   text: {
     fontSize: 15,

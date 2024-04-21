@@ -11,6 +11,7 @@
   "dependencies": {
     "@expo/cli": "^0.17.10",
     "@expo/vector-icons": "^14.0.0",
+    "@react-native-community/geolocation": "^3.2.1",
     "@react-native-masked-view/masked-view": "0.3.0",
     "@react-navigation/bottom-tabs": "^6.5.20",
     "@react-navigation/native": "^6.1.17",
@@ -31,7 +32,8 @@
     "react-native-screens": "~3.29.0",
     "react-native-status-bar-height": "^2.6.0",
     "react-native-svg": "^15.1.0",
-    "react-native-vector-icons": "^10.0.3"
+    "react-native-vector-icons": "^10.0.3",
+    "expo-location": "~16.5.5"
   },
   "devDependencies": {
     "@babel/core": "^7.20.0"
