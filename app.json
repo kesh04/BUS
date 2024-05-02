@@ -21,19 +21,15 @@
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#ffffff"
-      },
-      "package": "com.keshbatman.bus"
+      }
+      
     },
     "web": {
       "favicon": "./assets/favicon.png"
     },
     "plugins": [
       "expo-font"
-    ],
-    "extra": {
-      "eas": {
-        "projectId": "53ff3f8d-df99-4be3-a3c1-7f14d62b29fb"
-      }
-    }
+    ]
+   
   }
 }
