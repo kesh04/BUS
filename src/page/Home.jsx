@@ -17,30 +17,40 @@ import { getStatusBarHeight } from "react-native-status-bar-height";
 
 export default function Home() {
   const navigation = useNavigation();
-  // useLayoutEffect(()=>{
-  //   navigation.setOptions({
-  //     headerShown: true,
-  //     title:'',
-  //     headerStyle:{
-  //       backgroundColor:'red',
-  //       height:100
-  //     }
-  //   })
-  // },[])
+  useLayoutEffect(()=>{
+    navigation.setOptions({
+      headerShown: true,
+      title:' MOVELK',
+      headerTitleStyle:{
+        color:'white',
+        fontSize:20,
+       fontWeight:'bold',
+      paddingHorizontal:'35%',
+      
+      },
+      headerStyle:{
+        backgroundColor:'#097969',
+        height:100,
+       
+      }, 
+    
+   
+    })
+  },[])
   const search = () => {
     navigation.navigate("Map");
   };
 
   return (
-    <SafeAreaView >
+    // <SafeAreaView >
       <View style={styles.container}>
 
         
           
         <View style={styles.header}>
       
-        <Image style={{height:60,width:90, backgroundColor:'black', borderRadius:10, margin:5}} source={require("../../assets/images/icon.png")} />
-          <Text
+        {/* <Image style={{height:60,width:90, backgroundColor:'black', borderRadius:10, margin:5}} source={require("../../assets/images/icon.png")} /> */}
+          {/* <Text
             style={{
               fontSize: 25,
               color: "#097969",
@@ -50,11 +60,12 @@ export default function Home() {
             }}
           >
             MOVELK
-          </Text>
+          </Text> */}
           <Text style={styles.text1}>select your loaction </Text>
           <Pressable style={styles.button} onPress={search}>
             <Text style={styles.text}>Search Location</Text>
-            <AntDesign style={{marginLeft:3,color:'white'}} name="right" size={15}  />
+            <AntDesign style={{marginLeft:5,color:'white'}} name="right" size={15}  />
+
           </Pressable>
         </View>
         <ScrollView bounces={false}>
@@ -67,7 +78,7 @@ export default function Home() {
           </View>
         </ScrollView>
       </View>
-    </SafeAreaView>
+    // </SafeAreaView>
   );
 }
 
@@ -78,6 +89,7 @@ const styles = StyleSheet.create({
   header: {
     height: "35%",
     borderRadius: 10,
+  
     
   },
   text1: {
@@ -94,17 +106,17 @@ const styles = StyleSheet.create({
   button: {
     alignItems: "center",
     justifyContent: "center",
-    borderRadius: 40,
+    borderRadius: 20,
     marginTop: -10,
     marginLeft: 5,
     backgroundColor: "#097969",
-    width: "35%",
+    width: "45%",
     height: "20%",
     flexDirection: 'row', 
   },
   text: {
     fontSize: 15,
     color: "white",
-    paddingLeft:10
+   
   },
 });
