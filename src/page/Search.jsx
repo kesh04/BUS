@@ -1,6 +1,5 @@
 import { View, Text, ScrollView, Pressable, TextInput } from "react-native";
 import React, { useLayoutEffect } from "react";
-
 import { useNavigation } from "@react-navigation/native";
 import { EvilIcons } from "@expo/vector-icons";
 export default function Search() {

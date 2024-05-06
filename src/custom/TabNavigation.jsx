@@ -4,10 +4,10 @@ import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import Home from "../page/Home";
 import Profile from "../page/Profile";
 import { Entypo, FontAwesome, Fontisto } from "@expo/vector-icons";
-import { Feather } from "@expo/vector-icons";
-import { AntDesign } from "@expo/vector-icons";
+import MaterialCommunityIcons from '@expo/vector-icons/MaterialCommunityIcons';
 import Search from "../page/Search";
-
+import { FontAwesome5 } from '@expo/vector-icons';
+import Specail from "../page/Specail";
 const Tab = createBottomTabNavigator();
 const TabNavigation = () => {
   return (
@@ -30,6 +30,7 @@ const TabNavigation = () => {
             ),
         }}
       />
+    
       <Tab.Screen
         name="Search"
         component={Search}
@@ -37,14 +38,28 @@ const TabNavigation = () => {
           tabBarLabel: "Search",
           tabBarIcon: ({ focused }) =>
             focused ? (
-              <FontAwesome name="search" size={24} color="#097969" />
+           
+              <MaterialCommunityIcons name="bus-clock" size={25} color="#097969" />
             ) : (
-              <FontAwesome
-                name="search"
-                size={24}
-                color="#808080"
-              />
+              <MaterialCommunityIcons name="bus-clock" size={25}  color="#808080" />
             ),
+        }}
+      />
+        <Tab.Screen
+        name="Specail"
+        component={Specail}
+        options={{
+          tabBarLabel: "Specail Bus",
+          tabBarIcon: ({ focused }) =>
+            focused ? (
+           
+         
+               
+            <FontAwesome5 name="bus-alt" size={20} color="#097969" />
+          ) : (
+           
+            <FontAwesome5 name="bus-alt" size={20} color="#808080" />
+          ),
         }}
       />
       <Tab.Screen
@@ -54,11 +69,11 @@ const TabNavigation = () => {
           tabBarLabel: "Setting",
           tabBarIcon: ({ focused }) =>
             focused ? (
-              <Fontisto name="player-settings" size={24} color="#097969" />
+              <Fontisto name="player-settings" size={22} color="#097969" />
             ) : (
               <Fontisto
                 name="player-settings"
-                size={24}
+                size={22}
                 color="#808080"
               />
             ),
