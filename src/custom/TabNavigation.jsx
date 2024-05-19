@@ -20,7 +20,7 @@ const TabNavigation = () => {
           headerShown: false,
           tabBarIcon: ({ focused }) =>
             focused ? (
-              <Entypo name="home" size={24} color="#097969" />
+              <Entypo name="home" size={24} color="#FED339" />
             ) : (
               <Entypo
                 name="home"
@@ -39,7 +39,7 @@ const TabNavigation = () => {
           tabBarIcon: ({ focused }) =>
             focused ? (
            
-              <MaterialCommunityIcons name="bus-clock" size={25} color="#097969" />
+              <MaterialCommunityIcons name="bus-clock" size={25} color="#FED339" />
             ) : (
               <MaterialCommunityIcons name="bus-clock" size={25}  color="#808080" />
             ),
@@ -55,7 +55,7 @@ const TabNavigation = () => {
            
          
                
-            <FontAwesome5 name="bus-alt" size={20} color="#097969" />
+            <FontAwesome5 name="bus-alt" size={20} color="#FED339" />
           ) : (
            
             <FontAwesome5 name="bus-alt" size={20} color="#808080" />
@@ -69,7 +69,7 @@ const TabNavigation = () => {
           tabBarLabel: "Setting",
           tabBarIcon: ({ focused }) =>
             focused ? (
-              <Fontisto name="player-settings" size={22} color="#097969" />
+              <Fontisto name="player-settings" size={22} color="#FED339" />
             ) : (
               <Fontisto
                 name="player-settings"

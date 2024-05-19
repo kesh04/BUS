@@ -14,7 +14,7 @@ const Specail = () => {
           paddingHorizontal: "35%",
         },
         headerStyle: {
-          backgroundColor: "#097969",
+          backgroundColor: "#FED339",
           height: 100,
         },
       });

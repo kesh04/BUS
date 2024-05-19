@@ -1,6 +1,6 @@
 import { View, Text, StyleSheet, Pressable } from "react-native";
 import React from "react";
-import { Primarycolor1 } from "../style/stylesheet";
+
 
 export default function Button({
   onPress,
@@ -33,7 +33,7 @@ export default function Button({
 
 const style = StyleSheet.create({
   text: {
-    color: "white",
+    color: "black",
     fontWeight: "bold",
   },
   container: {
@@ -44,7 +44,7 @@ const style = StyleSheet.create({
     borderRadius: 5,
   },
   container_PRIMARY: {
-    backgroundColor: Primarycolor1,
+    backgroundColor: "#FED339",
   },
   container_TERITIARY: {},
   text_TERITIARY: {

@@ -18,7 +18,7 @@ export default function Profile() {
       
       },
       headerStyle:{
-        backgroundColor:'#097969',
+        backgroundColor:'#FED339',
         height:100,
        
       }, 

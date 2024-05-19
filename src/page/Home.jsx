@@ -29,7 +29,7 @@ export default function Home() {
       
       },
       headerStyle:{
-        backgroundColor:'#097969',
+        backgroundColor:'#FED339',
         height:100,
        
       }, 
@@ -109,7 +109,7 @@ const styles = StyleSheet.create({
     borderRadius: 20,
     marginTop: -10,
     marginLeft: 5,
-    backgroundColor: "#097969",
+    backgroundColor: "#FED339",
     width: "45%",
     height: "20%",
     flexDirection: 'row', 
