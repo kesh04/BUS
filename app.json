@@ -2,6 +2,7 @@
   "expo": {
     "name": "bus",
     "slug": "bus",
+    "plugins": ["@react-native-firebase/app", "@react-native-firebase/auth"],
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
@@ -10,7 +11,7 @@
       "image": "./assets/splash.png",
       "resizeMode": "contain",
       "backgroundColor": "#ffffff"
-    },
+    }, 
     "assetBundlePatterns": [
       "**/*"
     ],
@@ -21,15 +22,17 @@
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#ffffff"
-      }
-      
+      },
+      "package": "com.keshana.bus"
     },
     "web": {
       "favicon": "./assets/favicon.png"
     },
-    "plugins": [
-      "expo-font"
-    ]
    
+    "extra": {
+      "eas": {
+        "projectId": "ebe7d1e8-b211-4f43-bf4f-6d3e6c96193e"
+      }
+    }
   }
 }

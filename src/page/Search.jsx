@@ -208,7 +208,7 @@ export default function Search() {
       headerLeft: () => (
         <Image
           source={Bus}
-          style={{ width: 40, height: 40, marginLeft: 10 , borderRadius:50, backgroundColor:"red"}}
+          style={{ width: 40, height: 40, marginLeft: 10 , borderRadius:50, }}
         />
       ),
     });
