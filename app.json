@@ -1,10 +1,10 @@
 {
   "expo": {
-    "name": "bus",
-    "slug": "bus",
+    "name": "MoveLK",
+    "slug": "MoveLK",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/icon.png",
+   
     "userInterfaceStyle": "light",
     "splash": {
       "image": "./assets/splash.png",
@@ -19,17 +19,20 @@
     },
     "android": {
       "adaptiveIcon": {
-        "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#ffffff"
-      }
-      
+      },
+      "package": "com.keshana.bus"
     },
     "web": {
       "favicon": "./assets/favicon.png"
     },
     "plugins": [
       "expo-font"
-    ]
-   
+    ],
+    "extra": {
+      "eas": {
+        "projectId": "4fae3768-57c7-44ad-adf3-4e954261dcc7"
+      }
+    }
   }
 }
