@@ -1,10 +1,14 @@
 {
   "expo": {
-    "name": "MoveLK",
-    "slug": "MoveLK",
+    "name": "bus",
+    "slug": "bus",
     "version": "1.0.0",
     "orientation": "portrait",
-   
+    "plugins": [
+      "@react-native-firebase/app",
+      "@react-native-firebase/auth",
+      "expo-font"
+    ],
     "userInterfaceStyle": "light",
     "splash": {
       "image": "./assets/splash.png",
@@ -18,21 +22,40 @@
       "supportsTablet": true
     },
     "android": {
+      "googleServicesFile": "./google-services.json",
       "adaptiveIcon": {
         "backgroundColor": "#ffffff"
       },
-      "package": "com.keshana.bus"
+      "package": "com.keshana.bus",
+      "config": {
+        "googleMaps": {
+          "apiKey": "AIzaSyD-Su_ewpCJJB3Pkk5GajRH1uH2SBp9W4Q"
+        }
+      }
     },
     "web": {
       "favicon": "./assets/favicon.png"
     },
-    "plugins": [
-      "expo-font"
-    ],
     "extra": {
       "eas": {
         "projectId": "4fae3768-57c7-44ad-adf3-4e954261dcc7"
       }
     }
+  },
+  "cli": {
+    "version": ">= 9.1.0"
+  },
+  "build": {
+    "development": {
+      "developmentClient": true,
+      "distribution": "internal"
+    },
+    "preview": {
+      "distribution": "internal"
+    },
+    "production": {}
+  },
+  "submit": {
+    "production": {}
   }
 }
