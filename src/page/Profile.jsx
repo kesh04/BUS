@@ -1,6 +1,7 @@
 import { View, Text } from "react-native";
 import React, { useLayoutEffect } from "react";
 import Button from "../custom/Button";
+import auth from "@react-native-firebase/auth";
 import { useNavigation } from "@react-navigation/native";
 import { SafeAreaView } from "react-native-safe-area-context";
 export default function Profile() {
@@ -26,12 +27,25 @@ export default function Profile() {
    
     })
   },[])
+
+  const handleout = async ()=>{
+    try{
+  await auth().signOut()
+  navigation.reset({
+    index:0,
+    routes:[{name:"Login"}],
+  })
+    }catch (error){
+  console.log("ERROR ", error);
+    }
+  }
+
   return (
     
       <View
         style={{  justifyContent: "center", alignItems: "center" }}
       >
-        <Button text="Logout" onPress={() => navigation.navigate("Logout")} />
+        <Button text="Logout" onPress={handleout} />
       </View>
     
   );
