@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "755072367825",
+    "project_id": "bus-login-5877a",
+    "storage_bucket": "bus-login-5877a.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:755072367825:android:572630c3d603af435159f0",
+        "android_client_info": {
+          "package_name": "com.keshana.bus"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "755072367825-s57uk6op3aplpbmg3uggqar97bpde9en.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyABkfdMKs6PV9MOgzg0wb0a6zCxJY832Y8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "755072367825-s57uk6op3aplpbmg3uggqar97bpde9en.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
